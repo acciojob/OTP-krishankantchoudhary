@@ -1,11 +1,11 @@
 //your JS code here. If required.
 let inputs=document.querySelectorAll(".code");
-if(input.length>0){
-	input[0].focus();
+if(inputs.length>0){
+	inputs[0].focus();
 }
 
-let Array=Array.from(inputs);
-Array.forEach((input,index)=>{
+let Arrayinput=Array.from(inputs);
+Arrayinput.forEach((input,index)=>{
 	input.addEventListener("input",(e)=>{
 		let value=e.target.value;
 		value=value.replace(/\D/g,"").slice(0,1);
@@ -15,11 +15,11 @@ Array.forEach((input,index)=>{
 			inputs[index+1].focus();
 		}
 	});
-	input.addEventListner("keydown",(e)=>{
+	input.addEventListener("keydown",(e)=>{
 		let key=e.key;
-		if(key==="backspace"){
+		if(key==="Backspace"){
 			e.preventDefault();
-		}
+		
 		if(input.value!==""){
 			input.value="";
 		}
@@ -27,6 +27,7 @@ Array.forEach((input,index)=>{
 			let previnput=inputs[index-1];
 			previnput.value="";
 			previnput.focus();
+		}
 		}
 	})
 	
